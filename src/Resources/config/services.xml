@@ -8,6 +8,11 @@
             <tag name="console.command"/>
         </service>
 
+        <service id="YireoAdditionalUserCommands\Command\UserDeleteCommand">
+            <argument type="service" id="YireoAdditionalUserCommands\Repository\UserRepository"/>
+            <tag name="console.command"/>
+        </service>
+
         <service id="YireoAdditionalUserCommands\Repository\UserRepository">
             <argument type="service" id="Doctrine\DBAL\Connection" />
         </service>
