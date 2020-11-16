@@ -2,9 +2,11 @@
 
 namespace YireoAdditionalUserCommands\Command;
 
+use Shopware\Core\Framework\Context;
+use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
+use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\System\User\UserEntity;
 use Symfony\Component\Console\Helper\Table;
-use YireoAdditionalUserCommands\Repository\UserRepository;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -15,15 +17,15 @@ class UserListCommand extends Command
     protected static $defaultDescription = 'Show a listing of all current users';
 
     /**
-     * @var UserRepository
+     * @var EntityRepositoryInterface
      */
     private $userRepository;
 
     /**
      * UserListCommand constructor.
-     * @param UserRepository $userRepository
+     * @param EntityRepositoryInterface $userRepository
      */
-    public function __construct(UserRepository $userRepository)
+    public function __construct(EntityRepositoryInterface $userRepository)
     {
         parent::__construct();
         $this->userRepository = $userRepository;
@@ -39,7 +41,9 @@ class UserListCommand extends Command
         $headers = ['Username', 'First name', 'Last name', 'Email', 'Active', 'Admin'];
         $rows = [];
 
-        foreach ($this->userRepository->getAll() as $user) {
+        $criteria = new Criteria();
+        $context = Context::createDefaultContext();
+        foreach ($this->userRepository->search($criteria, $context) as $user) {
             /** @var UserEntity $user */
             $rows[] = [
                 $user->getUsername(),

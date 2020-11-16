@@ -1,5 +1,5 @@
 # Shopware 6 additional user commands
-Shopware 6 plugin adding additional user commands to the CLI. The default console only supports two commands (`user:create` and `user:change-password`). This plugin adds the commands `user:list` and `user:delete`. Additionally, this plugin offers a `UserRepository` with handy methods.
+Shopware 6 plugin adding additional user commands to the CLI. The default console only supports two commands (`user:create` and `user:change-password`). This plugin adds the commands `user:list` and `user:delete`.
 
 ## Installation
 ```bash
@@ -12,16 +12,6 @@ bin/console cache:clear
 ## Usage
 ```bash
 bin/console user:list
-bin/console user:delete admin
-bin/console user:delete admin@shopware.com
+bin/console user:delete --username=admin
+bin/console user:delete --email=admin@shopware.com
 ```
-
-## Programming with the UserRepository
-Inject the `\YireoAdditionalUserCommands\Repository\UserRepository` into your code and use its methods:
-
-- `getAll`
-- `getByUsername`
-- `getByEmail`
-- `deleteByUsername`
-- `deleteByEmail`
-- `delete`
