@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace YireoAdditionalUserCommands\Exception;
+namespace Yireo\AdditionalUserCommands\Exception;
 
 use Exception;
 

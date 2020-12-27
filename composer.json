@@ -5,11 +5,11 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "YireoAdditionalUserCommands\\": "src/"
+            "Yireo\\AdditionalUserCommands\\": "src/"
         }
     },
     "extra": {
-        "shopware-plugin-class": "YireoAdditionalUserCommands\\YireoAdditionalUserCommands",
+        "shopware-plugin-class": "Yireo\\AdditionalUserCommands\\YireoAdditionalUserCommands",
         "label": {
             "en-GB": "Shopware 6 plugin adding additional user commands to the CLI"
         }

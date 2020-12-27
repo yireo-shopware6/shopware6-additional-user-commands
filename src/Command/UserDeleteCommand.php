@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace YireoAdditionalUserCommands\Command;
+namespace Yireo\AdditionalUserCommands\Command;
 
 use InvalidArgumentException;
 use Shopware\Core\Framework\Context;
@@ -11,7 +11,7 @@ use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use YireoAdditionalUserCommands\Exception\UserNotFoundException;
+use Yireo\AdditionalUserCommands\Exception\UserNotFoundException;
 
 class UserDeleteCommand extends Command
 {

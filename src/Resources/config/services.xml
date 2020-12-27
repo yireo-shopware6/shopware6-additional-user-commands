@@ -3,12 +3,12 @@
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="YireoAdditionalUserCommands\Command\UserListCommand">
+        <service id="Yireo\AdditionalUserCommands\Command\UserListCommand">
             <argument type="service" id="user.repository"/>
             <tag name="console.command"/>
         </service>
 
-        <service id="YireoAdditionalUserCommands\Command\UserDeleteCommand">
+        <service id="Yireo\AdditionalUserCommands\Command\UserDeleteCommand">
             <argument type="service" id="user.repository"/>
             <tag name="console.command"/>
         </service>

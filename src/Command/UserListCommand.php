@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace YireoAdditionalUserCommands\Command;
+namespace Yireo\AdditionalUserCommands\Command;
 
 use Shopware\Core\Framework\Context;
 use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
