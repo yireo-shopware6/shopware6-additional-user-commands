@@ -5,7 +5,7 @@ Shopware 6 plugin adding additional user commands to the CLI. The default consol
 ```bash
 composer require yireo/shopware6-additional-user-commands
 bin/console plugin:refresh
-bin/console plugin:install YireoAdditionalUserCommands
+bin/console plugin:install --activate YireoAdditionalUserCommands
 bin/console cache:clear
 ```
 
