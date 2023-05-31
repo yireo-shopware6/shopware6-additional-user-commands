@@ -3,7 +3,7 @@
 namespace Yireo\AdditionalUserCommands\Command;
 
 use Shopware\Core\Framework\Context;
-use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
+use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\System\User\UserEntity;
 use Symfony\Component\Console\Helper\Table;
@@ -17,15 +17,15 @@ class UserListCommand extends Command
     protected static $defaultDescription = 'Show a listing of all current users';
 
     /**
-     * @var EntityRepositoryInterface
+     * @var EntityRepository
      */
     private $userRepository;
 
     /**
      * UserListCommand constructor.
-     * @param EntityRepositoryInterface $userRepository
+     * @param EntityRepository $userRepository
      */
-    public function __construct(EntityRepositoryInterface $userRepository)
+    public function __construct(EntityRepository $userRepository)
     {
         parent::__construct();
         $this->userRepository = $userRepository;

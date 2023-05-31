@@ -4,7 +4,7 @@ namespace Yireo\AdditionalUserCommands\Command;
 
 use InvalidArgumentException;
 use Shopware\Core\Framework\Context;
-use Shopware\Core\Framework\DataAbstractionLayer\EntityRepositoryInterface;
+use Shopware\Core\Framework\DataAbstractionLayer\EntityRepository;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Criteria;
 use Shopware\Core\Framework\DataAbstractionLayer\Search\Filter\EqualsFilter;
 use Symfony\Component\Console\Input\InputArgument;
@@ -19,15 +19,15 @@ class UserDeleteCommand extends Command
     protected static $defaultDescription = 'Delete a specific user';
 
     /**
-     * @var EntityRepositoryInterface
+     * @var EntityRepository
      */
     private $userRepository;
 
     /**
      * UserListCommand constructor.
-     * @param EntityRepositoryInterface $userRepository
+     * @param EntityRepository $userRepository
      */
-    public function __construct(EntityRepositoryInterface $userRepository)
+    public function __construct(EntityRepository $userRepository)
     {
         parent::__construct();
         $this->userRepository = $userRepository;

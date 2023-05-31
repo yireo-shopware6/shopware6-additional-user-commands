@@ -8,6 +8,9 @@
             "Yireo\\AdditionalUserCommands\\": "src/"
         }
     },
+    "require": {
+        "shopware/core": "~v6.5.0"
+    },
     "extra": {
         "shopware-plugin-class": "Yireo\\AdditionalUserCommands\\YireoAdditionalUserCommands",
         "label": {
