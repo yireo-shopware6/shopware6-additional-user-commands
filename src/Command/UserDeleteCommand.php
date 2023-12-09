@@ -59,10 +59,10 @@ class UserDeleteCommand extends Command
         try {
             $this->deleteUserByField($fieldName, $fieldValue);
             $output->writeln('Deleted user with '.$fieldName.' "'.$fieldValue.'"');
-            return 1;
+            return 0;
         } catch (UserNotFoundException $e) {
             $output->writeln('<error>'.$e->getMessage().'</error>');
-            return 0;
+            return 1;
         }
     }
 
